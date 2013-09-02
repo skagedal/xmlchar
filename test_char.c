@@ -243,7 +243,7 @@ print_time (chartest_func f)
 int
 main (int argc, char *argv[])
 {
-  printf ("== NameChar == \n");
+  printf ("NameChar\n--------\n");
   printf ("- naive:\n");
   print_time (naive_is_name_char);
 
@@ -260,7 +260,7 @@ main (int argc, char *argv[])
     printf ("  - works.\n");
   print_time (pagedtable_is_name_char);
 
-  printf ("\n== NameStartChar ==\n");
+  printf ("\nNameStartChar\n-------------\n");
   printf ("- naive:\n");
   print_time (naive_is_name_start_char);
 
