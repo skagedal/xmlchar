@@ -16,41 +16,40 @@ Here are three variants:
 The output of the test_char program displays the following results on my
 computer (with an Intel Core 2 Duo Processor T5200, 1.60 GHz):
 
-NameChar
-========
-naive:
- - takes 2.7105 seconds to run through all unicode 100 times
- - takes 0.9108 seconds to run through ASCII 800000 times
-bigtable:
- - uses 136 kilobytes.
- - works.
- - takes 0.4213 seconds to run through all unicode 100 times
- - takes 0.4007 seconds to run through ASCII 800000 times
-pagedtable:
- - uses 2 kilobytes.
- - works.
- - takes 0.7243 seconds to run through all unicode 100 times
- - takes 0.6625 seconds to run through ASCII 800000 times
+== NameChar == 
+- naive:
+  - takes 2.7092 seconds to run through all unicode 100 times
+  - takes 0.9080 seconds to run through ASCII 800000 times
+- bigtable:
+  - uses 136 kilobytes.
+  - works.
+  - takes 0.4211 seconds to run through all unicode 100 times
+  - takes 0.4007 seconds to run through ASCII 800000 times
+- pagedtable:
+  - uses 2 kilobytes.
+  - works.
+  - takes 0.7003 seconds to run through all unicode 100 times
+  - takes 0.6629 seconds to run through ASCII 800000 times
 
-NameStartChar
-============
-naive:
- - takes 2.2131 seconds to run through all unicode 100 times
- - takes 0.7163 seconds to run through ASCII 800000 times
-bigtable:
- - uses 136 kilobytes.
- - works.
- - takes 0.4216 seconds to run through all unicode 100 times
- - takes 0.4004 seconds to run through ASCII 800000 times
-pagedtable:
- - uses 2 kilobytes.
- - works.
- - takes 0.6921 seconds to run through all unicode 100 times
- - takes 0.6560 seconds to run through ASCII 800000 times
+== NameStartChar ==
+- naive:
+  - takes 2.2124 seconds to run through all unicode 100 times
+  - takes 0.7160 seconds to run through ASCII 800000 times
+- bigtable:
+  - uses 136 kilobytes.
+  - works.
+  - takes 0.4211 seconds to run through all unicode 100 times
+  - takes 0.4001 seconds to run through ASCII 800000 times
+- pagedtable:
+  - uses 2 kilobytes.
+  - works.
+  - takes 0.6985 seconds to run through all unicode 100 times
+  - takes 0.7487 seconds to run through ASCII 800000 times
 
-So, the benefit of the lookup table is not huge, especially not when the checked
-characters are in the ASCII range, which probably most XML tag names will be. 
+So, the benefit of the paged lookup table is not huge, especially not when the 
+checked characters are in the ASCII range, which probably most XML tag names 
+will be.  The bigtable is slightly better, but not really worth the space?
 
-So, umm, it was fun to code anyway...
+Well, it was fun to code anyway...
 
 

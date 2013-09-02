@@ -234,47 +234,47 @@ test_time_ascii (chartest_func f)
 void
 print_time (chartest_func f)
 {
-  printf (" - takes %.4f seconds to run through all unicode %d times\n", 
+  printf ("  - takes %.4f seconds to run through all unicode %d times\n", 
 	  test_time (f), TIMES);
-  printf (" - takes %.4f seconds to run through ASCII %d times\n",
+  printf ("  - takes %.4f seconds to run through ASCII %d times\n",
 	  test_time_ascii (f), TIMES * 8000);
 }
 
 int
 main (int argc, char *argv[])
 {
-  printf ("NameChar\n========\n");
-  printf ("naive:\n");
+  printf ("== NameChar == \n");
+  printf ("- naive:\n");
   print_time (naive_is_name_char);
 
-  printf ("bigtable:\n - uses %d kilobytes.\n", sizeof NameChar / 1024);
+  printf ("- bigtable:\n  - uses %d kilobytes.\n", sizeof NameChar / 1024);
   if (test_valid_name_char_func ("bigtable_is_name_char", 
 				 bigtable_is_name_char))
-    printf (" - works.\n");
+    printf ("  - works.\n");
   print_time (bigtable_is_name_char);
 
-  printf ("pagedtable:\n - uses %d kilobytes.\n", 
+  printf ("- pagedtable:\n  - uses %d kilobytes.\n", 
   	  (sizeof NameChar_index + sizeof NameChar_pages) / 1024);
   if (test_valid_name_char_func ("pagedtable_is_name_char", 
 				 pagedtable_is_name_char))
-    printf (" - works.\n");
+    printf ("  - works.\n");
   print_time (pagedtable_is_name_char);
 
-  printf ("\nNameStartChar\n============\n");
-  printf ("naive:\n");
+  printf ("\n== NameStartChar ==\n");
+  printf ("- naive:\n");
   print_time (naive_is_name_start_char);
 
-  printf ("bigtable:\n - uses %d kilobytes.\n", sizeof NameStartChar / 1024);
+  printf ("- bigtable:\n  - uses %d kilobytes.\n", sizeof NameStartChar / 1024);
   if (test_valid_name_start_char_func ("bigtable_is_name_start_char", 
 				 bigtable_is_name_start_char))
-    printf (" - works.\n");
+    printf ("  - works.\n");
   print_time (bigtable_is_name_start_char);
 
-  printf ("pagedtable:\n - uses %d kilobytes.\n", 
+  printf ("- pagedtable:\n  - uses %d kilobytes.\n", 
   	  (sizeof NameStartChar_index + sizeof NameStartChar_pages) / 1024);
   if (test_valid_name_start_char_func ("pagedtable_is_name_start_char", 
 				 pagedtable_is_name_start_char))
-    printf (" - works.\n");
+    printf ("  - works.\n");
   print_time (pagedtable_is_name_start_char);
 
 }
